@@ -16,7 +16,9 @@ namespace Excel
             _excelApp.Visible = true;
 
             List<string> rowValue = new List<string> { };
-            string fileName = "C:\\TestData.xlsx";
+            string fileName = "C:\\tst.xlsx";
+            string url = "http://stage-journals.lww.com/";
+            string jrn = null;
 
             //open the workbook
             Workbook workbook = _excelApp.Workbooks.Open(fileName,
@@ -45,7 +47,7 @@ namespace Excel
                     rowValue.Add(excelRange.Cells[row, col].Value2.ToString());
                 }
                 //Console.WriteLine
-                Debug.Print(rowValue[0] + " - " + rowValue[1] + " - " + rowValue[2]);
+                Debug.Print(url + rowValue[0]);
                 rowValue.Clear();
             }
 
